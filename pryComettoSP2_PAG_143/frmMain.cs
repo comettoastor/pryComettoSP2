@@ -40,22 +40,12 @@ namespace pryComettoSP2_PAG_143
             if (txtCantidadDias.Text!="")
             {
                 mrcAdicionales.Enabled = true;
-                chkCocina.Enabled = true;
-                chkHeladera.Enabled = true;
-                chkTelevision.Enabled = true;
                 mrcFormaPago.Enabled = true;
-                optEfectivo.Enabled = true;
-                optTarjeta.Enabled = true;
             }
             else
             {
                 mrcAdicionales.Enabled = false;
-                chkCocina.Enabled = false;
-                chkHeladera.Enabled = false;
-                chkTelevision.Enabled = false;
                 mrcFormaPago.Enabled = false;
-                optEfectivo.Enabled = false;
-                optTarjeta.Enabled = false;
             }
         }
 
@@ -64,8 +54,6 @@ namespace pryComettoSP2_PAG_143
             if (lstTarjetas.SelectedIndex != -1)
             {
                 mrcTitularReserva.Enabled = true;
-                lblNombreTitular.Enabled = true;
-                txtNombreTitular.Enabled = true;
             }
         }
 
@@ -73,11 +61,13 @@ namespace pryComettoSP2_PAG_143
         {
             if (optTarjeta.Checked == true)
             {
+                mrcTitularReserva.Enabled = true;
                 lblTarjetas.Enabled = true;
                 lstTarjetas.Enabled = true;
             }
             else
             {
+                mrcTitularReserva.Enabled = false;
                 lblTarjetas.Enabled = false;
                 lstTarjetas.Enabled = false;
             }
@@ -107,6 +97,31 @@ namespace pryComettoSP2_PAG_143
             {
                 btnAceptar.Enabled = false;
             }
+        }
+
+        private void optEfectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (optEfectivo.Checked == true)
+            {
+                mrcTitularReserva.Enabled = true;
+            }
+            else
+            {
+                mrcTitularReserva.Enabled = false;
+            }
+        }
+
+        private void txtCantidadDias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            lblResumen.Text = "Tipo de cabaña: " + lstTipoCabaña.Text + "\nCantidad de personas: " + lstCantidadPersonas.Text;
         }
     }
 }

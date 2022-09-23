@@ -50,6 +50,7 @@
             this.lblTelefonoTitular = new System.Windows.Forms.Label();
             this.txtNombreTitular = new System.Windows.Forms.TextBox();
             this.lblNombreTitular = new System.Windows.Forms.Label();
+            this.lblResumen = new System.Windows.Forms.Label();
             this.mrcTipoCabaña.SuspendLayout();
             this.mrcAdicionales.SuspendLayout();
             this.mrcFormaPago.SuspendLayout();
@@ -113,6 +114,7 @@
             this.txtCantidadDias.Size = new System.Drawing.Size(77, 20);
             this.txtCantidadDias.TabIndex = 3;
             this.txtCantidadDias.TextChanged += new System.EventHandler(this.txtCantidadDias_TextChanged);
+            this.txtCantidadDias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadDias_KeyPress);
             // 
             // lblTipoCabaña
             // 
@@ -141,7 +143,6 @@
             // optEfectivo
             // 
             this.optEfectivo.AutoSize = true;
-            this.optEfectivo.Enabled = false;
             this.optEfectivo.Location = new System.Drawing.Point(18, 31);
             this.optEfectivo.Name = "optEfectivo";
             this.optEfectivo.Size = new System.Drawing.Size(64, 17);
@@ -149,11 +150,11 @@
             this.optEfectivo.TabStop = true;
             this.optEfectivo.Text = "Efectivo";
             this.optEfectivo.UseVisualStyleBackColor = true;
+            this.optEfectivo.CheckedChanged += new System.EventHandler(this.optEfectivo_CheckedChanged);
             // 
             // chkCocina
             // 
             this.chkCocina.AutoSize = true;
-            this.chkCocina.Enabled = false;
             this.chkCocina.Location = new System.Drawing.Point(23, 31);
             this.chkCocina.Name = "chkCocina";
             this.chkCocina.Size = new System.Drawing.Size(59, 17);
@@ -170,6 +171,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // mrcAdicionales
             // 
@@ -187,7 +189,6 @@
             // chkTelevision
             // 
             this.chkTelevision.AutoSize = true;
-            this.chkTelevision.Enabled = false;
             this.chkTelevision.Location = new System.Drawing.Point(23, 91);
             this.chkTelevision.Name = "chkTelevision";
             this.chkTelevision.Size = new System.Drawing.Size(74, 17);
@@ -198,7 +199,6 @@
             // chkHeladera
             // 
             this.chkHeladera.AutoSize = true;
-            this.chkHeladera.Enabled = false;
             this.chkHeladera.Location = new System.Drawing.Point(23, 61);
             this.chkHeladera.Name = "chkHeladera";
             this.chkHeladera.Size = new System.Drawing.Size(69, 17);
@@ -238,6 +238,7 @@
             // lblTarjetas
             // 
             this.lblTarjetas.AutoSize = true;
+            this.lblTarjetas.Enabled = false;
             this.lblTarjetas.Location = new System.Drawing.Point(15, 65);
             this.lblTarjetas.Name = "lblTarjetas";
             this.lblTarjetas.Size = new System.Drawing.Size(45, 13);
@@ -247,7 +248,6 @@
             // optTarjeta
             // 
             this.optTarjeta.AutoSize = true;
-            this.optTarjeta.Enabled = false;
             this.optTarjeta.Location = new System.Drawing.Point(150, 31);
             this.optTarjeta.Name = "optTarjeta";
             this.optTarjeta.Size = new System.Drawing.Size(58, 17);
@@ -283,6 +283,7 @@
             // lblTelefonoTitular
             // 
             this.lblTelefonoTitular.AutoSize = true;
+            this.lblTelefonoTitular.Enabled = false;
             this.lblTelefonoTitular.Location = new System.Drawing.Point(20, 69);
             this.lblTelefonoTitular.Name = "lblTelefonoTitular";
             this.lblTelefonoTitular.Size = new System.Drawing.Size(54, 13);
@@ -291,7 +292,6 @@
             // 
             // txtNombreTitular
             // 
-            this.txtNombreTitular.Enabled = false;
             this.txtNombreTitular.Location = new System.Drawing.Point(92, 38);
             this.txtNombreTitular.Name = "txtNombreTitular";
             this.txtNombreTitular.Size = new System.Drawing.Size(424, 20);
@@ -307,11 +307,20 @@
             this.lblNombreTitular.TabIndex = 1;
             this.lblNombreTitular.Text = "Nombre";
             // 
+            // lblResumen
+            // 
+            this.lblResumen.AutoSize = true;
+            this.lblResumen.Location = new System.Drawing.Point(567, 49);
+            this.lblResumen.Name = "lblResumen";
+            this.lblResumen.Size = new System.Drawing.Size(0, 13);
+            this.lblResumen.TabIndex = 12;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 445);
+            this.ClientSize = new System.Drawing.Size(770, 445);
+            this.Controls.Add(this.lblResumen);
             this.Controls.Add(this.mrcTitularReserva);
             this.Controls.Add(this.mrcFormaPago);
             this.Controls.Add(this.mrcAdicionales);
@@ -328,6 +337,7 @@
             this.mrcTitularReserva.ResumeLayout(false);
             this.mrcTitularReserva.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -355,6 +365,7 @@
         private System.Windows.Forms.Label lblTelefonoTitular;
         private System.Windows.Forms.TextBox txtNombreTitular;
         private System.Windows.Forms.Label lblNombreTitular;
+        private System.Windows.Forms.Label lblResumen;
     }
 }
 
