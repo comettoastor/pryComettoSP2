@@ -110,6 +110,7 @@
             // 
             this.txtCantidadDias.Enabled = false;
             this.txtCantidadDias.Location = new System.Drawing.Point(430, 34);
+            this.txtCantidadDias.MaxLength = 2;
             this.txtCantidadDias.Name = "txtCantidadDias";
             this.txtCantidadDias.Size = new System.Drawing.Size(77, 20);
             this.txtCantidadDias.TabIndex = 3;
@@ -147,7 +148,6 @@
             this.optEfectivo.Name = "optEfectivo";
             this.optEfectivo.Size = new System.Drawing.Size(64, 17);
             this.optEfectivo.TabIndex = 4;
-            this.optEfectivo.TabStop = true;
             this.optEfectivo.Text = "Efectivo";
             this.optEfectivo.UseVisualStyleBackColor = true;
             this.optEfectivo.CheckedChanged += new System.EventHandler(this.optEfectivo_CheckedChanged);
@@ -252,7 +252,6 @@
             this.optTarjeta.Name = "optTarjeta";
             this.optTarjeta.Size = new System.Drawing.Size(58, 17);
             this.optTarjeta.TabIndex = 12;
-            this.optTarjeta.TabStop = true;
             this.optTarjeta.Text = "Tarjeta";
             this.optTarjeta.UseVisualStyleBackColor = true;
             this.optTarjeta.CheckedChanged += new System.EventHandler(this.optTarjeta_CheckedChanged);
@@ -279,6 +278,7 @@
             this.txtTelefonoTitular.Size = new System.Drawing.Size(424, 20);
             this.txtTelefonoTitular.TabIndex = 9;
             this.txtTelefonoTitular.TextChanged += new System.EventHandler(this.txtTelefonoTitular_TextChanged);
+            this.txtTelefonoTitular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoTitular_KeyPress);
             // 
             // lblTelefonoTitular
             // 
@@ -310,7 +310,7 @@
             // lblResumen
             // 
             this.lblResumen.AutoSize = true;
-            this.lblResumen.Location = new System.Drawing.Point(567, 49);
+            this.lblResumen.Location = new System.Drawing.Point(567, 27);
             this.lblResumen.Name = "lblResumen";
             this.lblResumen.Size = new System.Drawing.Size(0, 13);
             this.lblResumen.TabIndex = 12;
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 445);
+            this.ClientSize = new System.Drawing.Size(749, 445);
             this.Controls.Add(this.lblResumen);
             this.Controls.Add(this.mrcTitularReserva);
             this.Controls.Add(this.mrcFormaPago);
@@ -327,6 +327,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.mrcTipoCabaña);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reserva de cabañas";
             this.mrcTipoCabaña.ResumeLayout(false);
             this.mrcTipoCabaña.PerformLayout();
