@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mrcTipoCabaña = new System.Windows.Forms.GroupBox();
             this.lblCantidadDias = new System.Windows.Forms.Label();
             this.lblCantidadPersonas = new System.Windows.Forms.Label();
@@ -98,8 +99,7 @@
             this.lstTipoCabaña.FormattingEnabled = true;
             this.lstTipoCabaña.Items.AddRange(new object[] {
             "A",
-            "B",
-            "C"});
+            "B"});
             this.lstTipoCabaña.Location = new System.Drawing.Point(54, 34);
             this.lstTipoCabaña.Name = "lstTipoCabaña";
             this.lstTipoCabaña.Size = new System.Drawing.Size(95, 21);
@@ -226,9 +226,9 @@
             this.lstTarjetas.Enabled = false;
             this.lstTarjetas.FormattingEnabled = true;
             this.lstTarjetas.Items.AddRange(new object[] {
-            "MasterCard",
-            "VISA",
-            "Naranja"});
+            "Card Red",
+            "Card Green",
+            "Card Blue"});
             this.lstTarjetas.Location = new System.Drawing.Point(18, 91);
             this.lstTarjetas.Name = "lstTarjetas";
             this.lstTarjetas.Size = new System.Drawing.Size(192, 21);
@@ -326,9 +326,12 @@
             this.Controls.Add(this.mrcAdicionales);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.mrcTipoCabaña);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reserva de cabañas";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.mrcTipoCabaña.ResumeLayout(false);
             this.mrcTipoCabaña.PerformLayout();
             this.mrcAdicionales.ResumeLayout(false);

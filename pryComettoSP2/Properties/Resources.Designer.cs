@@ -63,9 +63,19 @@ namespace pryComettoSP2_PAG_143.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IcoCabaña {
+        internal static System.Drawing.Bitmap IconCabaña {
             get {
-                object obj = ResourceManager.GetObject("IcoCabaña", resourceCulture);
+                object obj = ResourceManager.GetObject("IconCabaña", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoCabaña2 {
+            get {
+                object obj = ResourceManager.GetObject("IconoCabaña2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

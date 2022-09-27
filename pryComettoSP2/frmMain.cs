@@ -30,20 +30,19 @@ namespace pryComettoSP2_PAG_143
                 lstCantidadPersonas.Items.Add(1);
                 lstCantidadPersonas.Items.Add(2);
                 lstCantidadPersonas.Items.Add(3);
+                lstCantidadPersonas.Items.Add(4);
             }
             if (lstTipoCabaña.SelectedItem == "B")
             {
                 lstCantidadPersonas.Items.Clear();
+                lstCantidadPersonas.Items.Add(1);
+                lstCantidadPersonas.Items.Add(2);
+                lstCantidadPersonas.Items.Add(3);
                 lstCantidadPersonas.Items.Add(4);
                 lstCantidadPersonas.Items.Add(5);
                 lstCantidadPersonas.Items.Add(6);
-            }
-            if (lstTipoCabaña.SelectedItem == "C")
-            {
-                lstCantidadPersonas.Items.Clear();
                 lstCantidadPersonas.Items.Add(7);
                 lstCantidadPersonas.Items.Add(8);
-                lstCantidadPersonas.Items.Add(9);
             }
         }
 
@@ -87,15 +86,17 @@ namespace pryComettoSP2_PAG_143
         {
             if (optTarjeta.Checked == true)
             {
-                mrcTitularReserva.Enabled = true;
                 lblTarjetas.Enabled = true;
                 lstTarjetas.Enabled = true;
             }
             else
             {
-                mrcTitularReserva.Enabled = false;
                 lblTarjetas.Enabled = false;
                 lstTarjetas.Enabled = false;
+            }
+            if (optTarjeta.Checked == true && lstTarjetas.SelectedIndex != -1)
+            {
+                mrcTitularReserva.Enabled = true;
             }
         }
 
@@ -150,7 +151,11 @@ namespace pryComettoSP2_PAG_143
         {
             if (lstTipoCabaña.SelectedIndex != -1 && lstCantidadPersonas.SelectedIndex != -1 && txtCantidadDias.Text !="" && (lstTarjetas.SelectedIndex!= -1 || optEfectivo.Checked == true) && txtNombreTitular.Text != "" && txtTelefonoTitular.Text != "")
             {
-                lblResumen.Text = "Tipo de cabaña: " + lstTipoCabaña.Text + "\nCantidad de personas: " + lstCantidadPersonas.Text + "\nDías: " + txtCantidadDias.Text + "\nAdicionales:";
+                lblResumen.Text = "Tipo de cabaña: " + lstTipoCabaña.Text;
+                lblResumen.Text += "\nCantidad de personas: " + lstCantidadPersonas.Text;
+                lblResumen.Text += "\nDías: " + txtCantidadDias.Text;
+                lblResumen.Text += "\nAdicionales:";
+                
                 if (chkCocina.Checked == true)
                 {
                     lblResumen.Text += "\n- Cocina: Si";
@@ -200,6 +205,15 @@ namespace pryComettoSP2_PAG_143
                 MessageBox.Show("Ingrese únicamente números");
             }
 
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            //Cargar Datos Iniciales de los controles de mrcTipoCabaña según el PDF
+
+            //lstTipoCabaña.SelectedIndex = 0;
+            //lstCantidadPersonas.SelectedIndex = 0;
+            //txtCantidadDias.Text = "1";
         }
     }
 }

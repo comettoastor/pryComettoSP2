@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconoCabaña2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,7 +84,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IcoCabaña.png" />
+    <None Include="Resources\IconoCabaña2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconCabaña.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconoCabaña2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
