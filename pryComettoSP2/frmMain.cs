@@ -143,7 +143,7 @@ namespace pryComettoSP2_PAG_143
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Ingrese únicamente números");
+                MessageBox.Show("Ingrese únicamente números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -202,7 +202,7 @@ namespace pryComettoSP2_PAG_143
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Ingrese únicamente números");
+                MessageBox.Show("Ingrese únicamente números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
