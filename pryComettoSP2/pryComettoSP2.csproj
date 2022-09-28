@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8A063372-387B-4D06-BE51-670E7DCFEBC1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>pryComettoSP2_PAG_143</RootNamespace>
-    <AssemblyName>pryComettoSP2_PAG_143</AssemblyName>
+    <RootNamespace>pryComettoSP2</RootNamespace>
+    <AssemblyName>pryComettoSP2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
